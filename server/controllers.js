@@ -7,7 +7,6 @@ groceryControllers.getItems = async (req, res, next) => {
   try {
     const groceryList = await Groceries.find({});
     res.locals.groceries = groceryList;
-    console.log(res.locals.groceries);
     return next();
   } catch (error) {
     return next({
@@ -32,5 +31,8 @@ groceryControllers.addItem = async (req, res, next) => {
     });
   }
 };
+
+//functionality to delete items
+groceryControllers.deleteItem = async (req, res, next) => {};
 
 module.exports = groceryControllers;

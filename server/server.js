@@ -17,8 +17,12 @@ app.get('/items', groceryControllers.getItems, (req, res) => {
 });
 
 //adds item to grocery list and sends the new item back
-app.post('/', groceryControllers.addItem, (req, res) => {
+app.post('/post', groceryControllers.addItem, (req, res) => {
   return res.status(200).json(res.locals.newItem);
+});
+
+app.delete('/remove', (req, res) => {
+  return res.sendStatus(200);
 });
 
 //handle wildcard error handling
